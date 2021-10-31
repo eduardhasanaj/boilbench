@@ -23,10 +23,14 @@ Regenerate the models as needed. The model generation script and the code in
 this repo will use the replaced SQLBoiler. The same can be done for any other
 dependency as needed.
 
-**Note**: There are some ruby and python scripts for generating graphs from
-many runs of these benchmarks. They can be used to help update the sqlboiler
-README with new graphs.
-
-Graphs can be found in the [SQLBoiler](https://github.com/volatiletech/sqlboiler) readme.
+**Note**: Graphs can be generated using benchx-cli. First you need to install.
+```
+go get github.com/eduardhasanaj/benchx-cli
+```
+After that you run the following command
+```
+benchx-cli run groups Delete Insert RawBind SelectAll SelectComplex SelectSubset Update
+```
+Graphs are generated in a folder called graphs.
 
 The homepage for the [SQLBoiler](https://github.com/volatiletech/sqlboiler) is located at: https://github.com/volatiletech/sqlboiler
