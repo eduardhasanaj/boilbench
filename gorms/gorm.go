@@ -15,10 +15,10 @@ type Pilot struct {
 type Jet struct {
 	ID int
 
-	Pilot   Pilot `gorm:"ForeignKey:PilotID"`
+	Pilot   Pilot `gorm:"foreignKey:PilotID"`
 	PilotID int   `gorm:"not null"`
 
-	Airport   Airport `gorm:"ForeignKey:Airport"`
+	Airport   Airport `gorm:"foreignKey:Airport"`
 	AirportID int     `gorm:"not null"`
 
 	Name       string `gorm:"not null"`
@@ -39,7 +39,7 @@ type Airport struct {
 type License struct {
 	ID int
 
-	Pilot   Pilot `gorm:"ForeignKey:PilotID"`
+	Pilot   Pilot `gorm:"foreignKey:PilotID"`
 	PilotID int
 }
 
